@@ -16,7 +16,7 @@ jobs:
       - name: Generate Docs
         run: npm run builddocs
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.6.3
         with:
           branch: beta
           folder: docs
