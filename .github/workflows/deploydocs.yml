@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Deploy Beta Docs
 run-name: generating and deploying latest latiteapi docs
 on: [push]
 jobs:
@@ -16,8 +16,8 @@ jobs:
       - name: Generate Docs
         run: npm run builddocs
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.4.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          branch: gh-pages 
+          branch: beta
           folder: docs
           single-commit: true
