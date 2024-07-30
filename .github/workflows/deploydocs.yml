@@ -1,0 +1,23 @@
+name: Deploy Docs
+run-name: generating and deploying latest latiteapi docs
+on: [push]
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Generate Docs
+        run: npm run builddocs
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.4.1
+        with:
+          branch: gh-pages 
+          folder: docs
+          single-commit: true

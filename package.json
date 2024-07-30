@@ -5,15 +5,17 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "tsc &&  rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\" && echo Building Unit Tests... &&  tsc -p test"
+    "build": "tsc &&  rollup -c rollup.config.js && node -e \"fs.rmSync('./out', { recursive: true })\" && echo Building Unit Tests... &&  tsc -p test",
+    "builddocs": "npx typedoc"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-typescript": "^11.1.2",
-	"@rollup/plugin-commonjs": "^25.0.7",
     "rollup": "^3.25.3",
     "rollup-plugin-combine": "^2.1.1",
     "rollup-plugin-match": "^1.0.0",
     "tslib": "^2.6.0",
+    "typedoc": "^0.26.5",
     "typescript": "^5.1.6"
   },
   "directories": {
@@ -31,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/LatiteScripting/latiteapi/issues"
   },
-  "homepage": "https://github.com/LatiteScripting/latiteapi#readme"
+  "homepage": "https://github.com/LatiteScripting/latiteapi#readme",
+  "dependencies": {
+    "@mxssfd/typedoc-theme": "^1.1.6"
+  }
 }

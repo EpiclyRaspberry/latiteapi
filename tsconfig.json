@@ -115,5 +115,15 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": false /* Skip type checking all .d.ts files. */
+  },
+  "typedocOptions": {
+    // "$schema": "https://typedoc.org/schema.json",
+    "plugin": ["@mxssfd/typedoc-theme"],
+    "excludeExternals": true,
+    "externalPattern": ["**/node_modules/**"],
+    "entryPointStrategy": "expand",
+    "entryPoints": ["./definitions"],
+    "theme": "my-theme",
+    "name": "Latite Scripting Documentation"
   }
 }
